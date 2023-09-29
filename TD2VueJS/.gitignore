@@ -13,7 +13,8 @@ dist
 dist-ssr
 coverage
 *.local
-
+../wra506dTD1
+/wra506dTD1
 /cypress/videos/
 /cypress/screenshots/
 
