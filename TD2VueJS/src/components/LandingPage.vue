@@ -13,16 +13,6 @@ onMounted(async () => {
 });
 </script>
 
-<template>
-
-<h1>Movie listing : </h1>
-  <label for="recherche">Rechercher un film</label>
-  <input class="search" v-model="recherche" @keydown="filter" type="text">
-  <div class='movieFlex' v-for="movie in data.slice(0,4)">
-    <CardMovies :movie="movie" ></CardMovies>
-  </div>
-</template>
-
 <style>
 h1 {
   color: red;
@@ -45,3 +35,25 @@ a,
 }
 
 </style>
+
+<template>
+
+  <h1>Movie listing : </h1>
+  <label for="recherche">Rechercher un film</label>
+  <input class="search" v-model="recherche" @keydown="filter" type="text">
+  <div class='movieFlex' v-for="movie in data.slice(0,4)">
+    <CardMovies :movie="movie" ></CardMovies>
+  </div>
+
+<!--  TODO : add pagination logic & filterSearch-->
+  <div class="pagination">
+    <a href="#">&laquo;</a>
+    <a href="#">1</a>
+    <a class="active" href="#">2</a>
+    <a href="#">3</a>
+    <a href="#">4</a>
+    <a href="#">5</a>
+    <a href="#">&raquo;</a>
+  </div>
+
+</template>
