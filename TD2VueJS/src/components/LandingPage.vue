@@ -17,13 +17,20 @@ onMounted(async () => {
 
 <h1>Movie listing : </h1>
   <label for="recherche">Rechercher un film</label>
-  <input v-model="recherche" @keydown="filter" type="text">
-  <div class='movieFlex' v-for="movie in data.slice(0,10)" :key="movie.title">
-    <CardMovies :movie="movie.title" :description="movie.description" :releaseDate="movie.releaseDate" ></CardMovies>
+  <input class="search" v-model="recherche" @keydown="filter" type="text">
+  <div class='movieFlex' v-for="movie in data.slice(0,4)">
+    <CardMovies :movie="movie" ></CardMovies>
   </div>
 </template>
 
 <style>
+h1 {
+  color: red;
+}
+.search {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 a,
 .green {
   text-decoration: none;

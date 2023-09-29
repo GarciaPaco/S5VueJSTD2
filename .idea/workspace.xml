@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feat: API request to display movies in landing page">
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/components/CardMovies.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/components/CardMovies.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/components/LandingPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/components/LandingPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/FicheMovie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/FicheMovie.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/MovieCardAndFilter" />
+                    <option name="lastUsedInstant" value="1695974902" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1695974730" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/HomeListing" />
+                    <option name="lastUsedInstant" value="1695969147" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/VueInit" />
+                    <option name="lastUsedInstant" value="1695968186" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1695968072" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2W3imywkR0Zw4dEWkyF9I17q4st" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "git-widget-placeholder": "feature/MovieCardAndFilter",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2021.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="" />
+      <created>1695967826786</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695967826786</updated>
+      <workItem from="1695967827777" duration="5881000" />
+      <workItem from="1695974855221" duration="4752000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: Init vueJS">
+      <option name="closed" value="true" />
+      <created>1695968475950</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695968475950</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: Init vueJS">
+      <option name="closed" value="true" />
+      <created>1695971517339</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695971517339</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: API request to display movies in landing page">
+      <option name="closed" value="true" />
+      <created>1695974526796</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695974526796</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: API request to display movies in landing page">
+      <option name="closed" value="true" />
+      <created>1695974702648</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695974702648</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: Init vueJS" />
+    <MESSAGE value="feat: API request to display movies in landing page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: API request to display movies in landing page" />
+  </component>
+</project>

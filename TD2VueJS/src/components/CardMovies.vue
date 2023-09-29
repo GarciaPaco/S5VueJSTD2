@@ -1,13 +1,14 @@
 <script setup>
-defineProps(['movie', 'description', 'releaseDate']);
+defineProps(['movie']);
+
 </script>
 
 <template>
 
-  <p>Titre du film : {{ movie }} </p>
-  <p>Description : {{ description }}</p>
-  <p>Date de sortie : {{ releaseDate }}</p>
-  <router-link :to="'/fiche-movie/'+movie">Accéder aux détails du film</router-link>
+  <p>Titre du film : {{ movie.title }} </p>
+  <p>Description : {{ movie.description }}</p>
+  <p>Date de sortie : {{ movie.releaseDate }}</p>
+  <router-link :to="'/fiche-movie/'+movie.id">Accéder aux détails du film</router-link>
   <hr>
 
 </template>
