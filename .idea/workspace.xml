@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feat: API request to display movies in landing page">
+    <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feat: Add movie data and routes to have a detail page for each movie.">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TD2VueJS/src/components/CardMovies.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/components/CardMovies.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TD2VueJS/src/components/LandingPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/components/LandingPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TD2VueJS/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/router/index.js" afterDir="false" />
@@ -97,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1695967826786</updated>
       <workItem from="1695967827777" duration="5881000" />
-      <workItem from="1695974855221" duration="4752000" />
+      <workItem from="1695974855221" duration="5177000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Init vueJS">
       <option name="closed" value="true" />
@@ -131,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695974702648</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: Add movie data and routes to have a detail page for each movie.">
+      <option name="closed" value="true" />
+      <created>1695982123644</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695982123644</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,6 +163,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: Init vueJS" />
     <MESSAGE value="feat: API request to display movies in landing page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: API request to display movies in landing page" />
+    <MESSAGE value="feat: Add movie data and routes to have a detail page for each movie." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add movie data and routes to have a detail page for each movie." />
   </component>
 </project>
