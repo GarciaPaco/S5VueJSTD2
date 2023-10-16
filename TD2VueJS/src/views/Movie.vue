@@ -1,38 +1,67 @@
 <script setup>
-import { onMounted, ref } from 'vue';
-import axios from 'axios';
+  import {onMounted, ref} from 'vue'
 import CardMovies from "@/components/CardMovies.vue";
-let data = ref('');
-let nextPage = ref('');
-let previousPage = ref('');
-const dataAll = ref();
+  const movies = ref('')
+  const actors = ref('')
+  const pageNext = ref('')
+  const pagePrevious = ref('')
 
-onMounted(async () => {
-  const response = await axios.get('http://localhost/my_project_directory/public/index.php/api/movies?page=1')
-  data.value = response.data['hydra:member'];
-  dataAll.value = response.data
-  nextPage = response.data['hydra:view']['hydra:next'];
-  previousPage = response.data['hydra:view']['hydra:previous'];
+  onMounted(async () => {
+  fetch('http://localhost/my_project_directory/public/index.php/api/movies?page=1')
+      .then(response => response.json())
+      .then(data => {
+        movies.value = data['hydra:member'];
+        pageNext.value = data['hydra:view']['hydra:next'];
+        pagePrevious.value = data['hydra:view']['hydra:previous'];
+      });
 });
+  async function nextPage() {
+  try {
+  const response = await fetch(`http://localhost${pageNext.value}`);
+  const data = await response.json();
+  movies.value = data['hydra:member'];
+  pageNext.value = data['hydra:view']['hydra:next'];
+  pagePrevious.value = data['hydra:view']['hydra:previous'];
+} catch (error) {
+  console.error('Une erreur s\'est produite lors de la récupération des données.', error);
+}
+}
+
+  async function previousPage() {
+  try {
+  const response = await fetch(`http://localhost${pagePrevious.value}`);
+  const data = await response.json();
+  movies.value = data['hydra:member'];
+  pageNext.value = data['hydra:view']['hydra:next'];
+  pagePrevious.value = data['hydra:view']['hydra:previous'];
+} catch (error) {
+  console.error('Une erreur s\'est produite lors de la récupération des données.', error);
+}
+}
 </script>
 
 <template>
-<!--    <pre>{{dataAll}}</pre>-->
-  <h1 style="font-size:45px;">MOVIE LISTING</h1>
-  <label class='recherche' for="recherche">Rechercher un film : </label>
-  <input class="search" v-model="recherche" @keydown="filter" type="text">
-  <div class='movieFlex' v-for="movie in data.slice(0,10)">
-    <CardMovies :movie="movie" ></CardMovies>
+  <h1>MOVIE LISTING</h1>
+  <template v-if="pagePrevious">
+    <a class="pagination" @click="previousPage()">Previous</a>
+  </template>
+  <template v-if="pageNext">
+    <a class="pagination" @click="nextPage()">Next</a>
+  </template>
+  <div v-if="movies != null" class="flex">
+    <template v-for="movie in movies">
+      <div class="card">
+        <p>
+          {{ movie.title }} <br>
+          {{ movie.description }} <br>
+          Durée : {{ movie.duration }} <br>
+          Sortie : {{ movie.releaseDate }} <br>
+          <router-link :to="'/fiche-movie/'+movie.id">Accéder aux détails du film</router-link>
+        </p>
+      </div>
+    </template>
   </div>
-
-  <!--  TODO : add pagination logic & filterSearch-->
-
-  <div class="pagination">
-    <a v-if="previousPage" :href="previousPage">Précédent</a>
-    <a v-if="nextPage" :href="nextPage">Suivant</a>
-
-  </div>
-
+  <div v-else>Chargement des données...</div>
 </template>
 
 <style>
@@ -52,10 +81,10 @@ onMounted(async () => {
 }
 
 .pagination {
-  display: flex;
-  justify-content: center;
+  width: 50px;
+  border-radius: 5px;
+  padding: 5px;
   margin-left: 30px;
-  margin-bottom: 50px;
   font-size: 25px;
 }
 
@@ -63,6 +92,7 @@ h1 {
   color: red;
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 a {
@@ -73,7 +103,10 @@ a {
 a:hover {
   background-color: #ddd;
   color: red;
+  cursor: pointer;
 }
-
+.card {
+  margin-top: 15px;
+}
 
 </style>

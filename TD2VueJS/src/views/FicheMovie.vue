@@ -31,7 +31,7 @@ onMounted(async () => {
 
 
 <style>
-.datMovie {
+.dataMovie {
   margin-left : 30px;
 }
 </style>
