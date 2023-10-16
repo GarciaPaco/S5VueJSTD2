@@ -8,52 +8,37 @@ const dataAll = ref();
 onMounted(async () => {
   const response = await axios.get('http://localhost/my_project_directory/public/index.php/api/movies?page=1')
   data.value = response.data['hydra:member'];
-
-  dataAll.value = data.value
+  dataAll.value = response.data
 });
 </script>
 
-<style>
-h1 {
-  color: red;
-}
-.search {
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-</style>
-
 <template>
+  <h1 style="font-size:45px;">HOME</h1>
 
-  <h1>Movie listing : </h1>
-  <label for="recherche">Rechercher un film</label>
-  <input class="search" v-model="recherche" @keydown="filter" type="text">
   <div class='movieFlex' v-for="movie in data.slice(0,4)">
     <CardMovies :movie="movie" ></CardMovies>
   </div>
 
-<!--  TODO : add pagination logic & filterSearch-->
-  <div class="pagination">
-    <a href="#">&laquo;</a>
-    <a href="#">1</a>
-    <a class="active" href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">&raquo;</a>
-  </div>
 
 </template>
+
+<style>
+
+h1 {
+  color: red;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+a:hover {
+  background-color: #ddd;
+  color: red;
+}
+
+
+</style>

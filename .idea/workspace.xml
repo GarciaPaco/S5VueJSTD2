@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feat: Add movie data and routes to have a detail page for each movie.">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TD2VueJS/src/components/CardMovies.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/components/CardMovies.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TD2VueJS/src/components/LandingPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/components/LandingPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/FicheMovie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/FicheMovie.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +78,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "true",
     "git-widget-placeholder": "feature/MovieCardAndFilter",
+    "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -102,6 +98,8 @@
       <updated>1695967826786</updated>
       <workItem from="1695967827777" duration="5881000" />
       <workItem from="1695974855221" duration="5177000" />
+      <workItem from="1697441361412" duration="689000" />
+      <workItem from="1697443048667" duration="1910000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Init vueJS">
       <option name="closed" value="true" />
