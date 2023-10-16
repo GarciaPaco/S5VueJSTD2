@@ -5,13 +5,15 @@ import axios from 'axios';
 
 let data = ref('');
 const route = useRoute();
-const movie = route.params.movie;
+const movieId = route.params.movieId;
 
 onMounted(async () => {
-  const response = await axios.get('http://localhost/my_project_directory/public/index.php/api/movies/101')
+  const response = await axios.get('http://localhost/my_project_directory/public/index.php/api/movies/'+movieId)
   data.value = response.data
 });
+
 </script>
+
 <template>
 
   <div class="dataMovie" v-if="data">

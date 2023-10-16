@@ -12,7 +12,7 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/fiche-movie/:id',
+      path: '/fiche-movie/:movieId',
       name: 'fichemovie',
       component: FicheMovie
     },

@@ -56,7 +56,7 @@ import CardMovies from "@/components/CardMovies.vue";
           {{ movie.description }} <br>
           Durée : {{ movie.duration }} <br>
           Sortie : {{ movie.releaseDate }} <br>
-          <router-link :to="'/fiche-movie/'+movie.id">Accéder aux détails du film</router-link>
+          <router-link :to="{name: 'FicheMovie', params : {movieId : movie.id}} ">Accéder aux détails du film</router-link>
         </p>
       </div>
     </template>
