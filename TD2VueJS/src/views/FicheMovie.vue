@@ -15,7 +15,6 @@ onMounted(async () => {
 </script>
 
 <template>
-
   <div class="dataMovie" v-if="data">
     <h1>Nom du film : {{data.title}}</h1>
     <p>Description : {{data.description}}</p>
@@ -23,7 +22,6 @@ onMounted(async () => {
     <p>Genre : {{data.category}}</p>
     <p>Acteurs : {{data.actors}}</p>
     <p>Durée : {{data.duration}} minutes.</p>
-
   </div>
   <div v-else>
     <h1>Loading...</h1>

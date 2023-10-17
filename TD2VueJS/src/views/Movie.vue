@@ -48,7 +48,7 @@ import CardMovies from "@/components/CardMovies.vue";
   <template v-if="pageNext">
     <a class="pagination" @click="nextPage()">Next</a>
   </template>
-  <div v-if="movies != null" class="flex">
+  <div v-if="movies" class="flex">
     <template v-for="movie in movies">
       <div class="card">
         <p>

@@ -13,13 +13,33 @@ const router = createRouter({
     },
     {
       path: '/fiche-movie/:movieId',
-      name: 'fichemovie',
+      name: 'FicheMovie',
       component: FicheMovie
     },
     {
       path: '/movie',
       name: 'movie',
       component: Movie
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginView.vue')
+    },
+    {
+        path: '/actors',
+        name: 'actors',
+        component: () => import('../views/ActorsView.vue')
+    },
+    // {
+    //     path: '/fiche-actor/:actorId',
+    //     name: 'FicheActor',
+    //     component: () => import('../views/FicheActor.vue')
+    // },
+    {
+        path: '/category',
+        name: 'category',
+        component: () => import('../views/CategoryView.vue')
     }
   ]
 })
