@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feat: FicheMovie fix">
-      <change afterPath="$PROJECT_DIR$/TD2VueJS/src/views/ActorsView.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TD2VueJS/src/views/CategoryView.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TD2VueJS/src/views/LoginView.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feat: Add pages for actors/categories and login page to get JWT token">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/FicheMovie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/FicheMovie.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/Movie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/Movie.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +117,7 @@
       <workItem from="1697441361412" duration="689000" />
       <workItem from="1697443048667" duration="7763000" />
       <workItem from="1697466516143" duration="2640000" />
-      <workItem from="1697544508958" duration="4567000" />
+      <workItem from="1697544508958" duration="5637000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Init vueJS">
       <option name="closed" value="true" />
@@ -191,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697452105483</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: Add pages for actors/categories and login page to get JWT token">
+      <option name="closed" value="true" />
+      <created>1697549261937</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697549261937</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +215,7 @@
     <MESSAGE value="feat: Add movie page and start pagination. CSS changes overall." />
     <MESSAGE value="feat: Add Next/Previous to paginate Movie" />
     <MESSAGE value="feat: FicheMovie fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: FicheMovie fix" />
+    <MESSAGE value="feat: Add pages for actors/categories and login page to get JWT token" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add pages for actors/categories and login page to get JWT token" />
   </component>
 </project>
