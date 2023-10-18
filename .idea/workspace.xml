@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feat: Add pages for actors/categories and login page to get JWT token">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/ActorsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/ActorsView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +118,7 @@
       <workItem from="1697441361412" duration="689000" />
       <workItem from="1697443048667" duration="7763000" />
       <workItem from="1697466516143" duration="2640000" />
-      <workItem from="1697544508958" duration="5637000" />
+      <workItem from="1697544508958" duration="7180000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Init vueJS">
       <option name="closed" value="true" />
