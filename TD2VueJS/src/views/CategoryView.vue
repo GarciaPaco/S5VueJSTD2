@@ -1,26 +1,30 @@
 <script setup>
 import {onMounted, ref} from 'vue'
+import router from "@/router";
 
 const categories = ref('')
 const pageNext = ref('')
 const pagePrevious = ref('')
-const token = localStorage.getItem('token')
-if (!token) {
-  location.href = '/login'
-}
 
+
+const token = localStorage.getItem('token')
 onMounted(async () => {
-  fetch('http://localhost/my_project_directory/public/index.php/api/categories?page=1', {
+  fetch('http://localhost/my_project_directory/public/api/categories?page=1', {
     headers: {
       'Authorization': 'Bearer ' + token
     }
   })
       .then(response => response.json())
       .then(data => {
-        categories.value = data['hydra:member'];
-        pageNext.value = data['hydra:view']['hydra:next'];
-        pagePrevious.value = data['hydra:view']['hydra:previous'];
+        if (data.code === 401) {
+          router.push('/login')
+        } else {
+          categories.value = data['hydra:member'];
+          pageNext.value = data['hydra:view']['hydra:next'];
+          pagePrevious.value = data['hydra:view']['hydra:previous'];
+        }
       });
+
 });
 
 async function nextPage() {
@@ -46,6 +50,8 @@ async function previousPage() {
     console.error('Une erreur s\'est produite lors de la récupération des données.', error);
   }
 }
+
+
 </script>
 <template>
 
