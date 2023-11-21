@@ -5,9 +5,17 @@ import CardMovies from "@/components/CardMovies.vue";
   const actors = ref('')
   const pageNext = ref('')
   const pagePrevious = ref('')
+  const token = localStorage.getItem('token')
+  if (!token) {
+    location.href = '/login'
+  }
 
   onMounted(async () => {
-  fetch('http://localhost/my_project_directory/public/index.php/api/movies?page=1')
+  fetch('http://localhost/my_project_directory/public/index.php/api/movies?page=1', {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
       .then(response => response.json())
       .then(data => {
         movies.value = data['hydra:member'];

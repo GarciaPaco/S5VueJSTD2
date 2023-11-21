@@ -3,16 +3,24 @@
   const actors = ref('')
   const pageNext = ref('')
   const pagePrevious = ref('')
+  const token = localStorage.getItem('token')
+  if (!token) {
+    location.href = '/login'
+  }
 
   onMounted(async () => {
-  fetch('http://localhost/my_project_directory/public/index.php/api/actors?page=1')
+  fetch('http://localhost/my_project_directory/public/index.php/api/actors?page=1', {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
       .then(response => response.json())
       .then(data => {
         actors.value = data['hydra:member'];
         pageNext.value = data['hydra:view']['hydra:next'];
         pagePrevious.value = data['hydra:view']['hydra:previous'];
       });
-});
+  });
   async function nextPage() {
   try {
   const response = await fetch(`http://localhost${pageNext.value}`);

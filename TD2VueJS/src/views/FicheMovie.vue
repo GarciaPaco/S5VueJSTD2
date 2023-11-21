@@ -2,13 +2,21 @@
 import { useRoute } from 'vue-router'
 import { onMounted, ref } from 'vue';
 import axios from 'axios';
+const token = localStorage.getItem('token')
 
 let data = ref('');
 const route = useRoute();
 const movieId = route.params.movieId;
-
+if (!token) {
+  location.href = '/login'
+}
 onMounted(async () => {
-  const response = await axios.get('http://localhost/my_project_directory/public/index.php/api/movies/'+movieId)
+  const response = await axios.get('http://localhost/my_project_directory/public/index.php/api/movies/'+movieId,
+  {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  });
   data.value = response.data
 });
 
