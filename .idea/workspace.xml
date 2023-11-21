@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feat:Add Actors listing">
+    <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feat:Add token check to routes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/ActorsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/ActorsView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/CategoryView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/CategoryView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/FicheMovie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/FicheMovie.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/LoginView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/LoginView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/Movie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/Movie.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,12 +41,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="feature/MovieCardAndFilter" />
-                    <option name="lastUsedInstant" value="1695974902" />
+                    <option name="branchName" value="feature/addTokenToAPICall" />
+                    <option name="lastUsedInstant" value="1700551972" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="develop" />
-                    <option name="lastUsedInstant" value="1695974730" />
+                    <option name="lastUsedInstant" value="1700551715" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/MovieCardAndFilter" />
+                    <option name="lastUsedInstant" value="1695974902" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feature/HomeListing" />
@@ -51,10 +59,6 @@
                   <RecentBranch>
                     <option name="branchName" value="feature/VueInit" />
                     <option name="lastUsedInstant" value="1695968186" />
-                  </RecentBranch>
-                  <RecentBranch>
-                    <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1695968072" />
                   </RecentBranch>
                 </list>
               </option>
@@ -77,29 +81,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/MovieCardAndFilter&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/machi/Desktop/MMI/S5/Dev FRONT/VUEJS/TD2/TD2VueJS/src/views&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PhpStorm 2021.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "git-widget-placeholder": "feature/addTokenToAPICall",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/machi/Desktop/MMI/S5/Dev FRONT/VUEJS/TD2/TD2VueJS/src/views",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2021.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;vue.recent.templates&quot;: [
-      &quot;Vue Composition API Component&quot;
+  "keyToStringList": {
+    "vue.recent.templates": [
+      "Vue Composition API Component"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\machi\Desktop\MMI\S5\Dev FRONT\VUEJS\TD2\TD2VueJS\src\views" />
@@ -120,6 +124,7 @@
       <workItem from="1697466516143" duration="2640000" />
       <workItem from="1697544508958" duration="7641000" />
       <workItem from="1698386168428" duration="585000" />
+      <workItem from="1700550653992" duration="10483000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Init vueJS">
       <option name="closed" value="true" />
@@ -201,7 +206,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697613721144</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat:Add Actors listing">
+      <option name="closed" value="true" />
+      <created>1700551550115</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700551550115</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat:Add token check to routes">
+      <option name="closed" value="true" />
+      <created>1700557875850</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700557875850</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +248,7 @@
     <MESSAGE value="feat: FicheMovie fix" />
     <MESSAGE value="feat: Add pages for actors/categories and login page to get JWT token" />
     <MESSAGE value="feat:Add Actors listing" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:Add Actors listing" />
+    <MESSAGE value="feat:Add token check to routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:Add token check to routes" />
   </component>
 </project>

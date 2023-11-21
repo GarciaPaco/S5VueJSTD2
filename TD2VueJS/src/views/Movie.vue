@@ -1,18 +1,27 @@
 <script setup>
   import {onMounted, ref} from 'vue'
-import CardMovies from "@/components/CardMovies.vue";
+  import router from "@/router";
   const movies = ref('')
   const actors = ref('')
   const pageNext = ref('')
   const pagePrevious = ref('')
-
+  const token = localStorage.getItem('token')
   onMounted(async () => {
-  fetch('http://localhost/my_project_directory/public/index.php/api/movies?page=1')
+  fetch('http://localhost/my_project_directory/public/api/movies?page=1', {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
       .then(response => response.json())
       .then(data => {
-        movies.value = data['hydra:member'];
-        pageNext.value = data['hydra:view']['hydra:next'];
-        pagePrevious.value = data['hydra:view']['hydra:previous'];
+        console.log(data);
+        if (data.code === 401) {
+          router.push('/login')
+        } else {
+          movies.value = data['hydra:member'];
+          pageNext.value = data['hydra:view']['hydra:next'];
+          pagePrevious.value = data['hydra:view']['hydra:previous'];
+        }
       });
 });
   async function nextPage() {
