@@ -6,7 +6,7 @@ let data = ref('');
 const dataAll = ref();
 
 onMounted(async () => {
-  const response = await axios.get('http://localhost/my_project_directory/public/index.php/api/movies?page=1')
+  const response = await axios.get('http://localhost/public/index.php/api/movies?page=1')
   data.value = response.data['hydra:member'];
   dataAll.value = response.data
 });

@@ -7,7 +7,7 @@
   const token = localStorage.getItem('token')
 
   onMounted(async () => {
-  fetch('http://localhost/my_project_directory/public/api/actors?page=1', {
+  fetch('http://localhost/public/api/actors?page=1', {
     headers: {
       'Authorization': 'Bearer ' + token
     }
