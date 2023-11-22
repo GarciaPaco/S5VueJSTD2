@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feat:Add token check to routes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/ActorsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/ActorsView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/CategoryView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/CategoryView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/FicheMovie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/FicheMovie.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/LoginView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/LoginView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/Movie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/Movie.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Composition API Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/addTokenToAPICall" />
+                    <option name="lastUsedInstant" value="1700551972" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1700551715" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/MovieCardAndFilter" />
+                    <option name="lastUsedInstant" value="1695974902" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/HomeListing" />
+                    <option name="lastUsedInstant" value="1695969147" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/VueInit" />
+                    <option name="lastUsedInstant" value="1695968186" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2W3imywkR0Zw4dEWkyF9I17q4st" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "git-widget-placeholder": "feature/addTokenToAPICall",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/machi/Desktop/MMI/S5/Dev FRONT/VUEJS/TD2/TD2VueJS/src/views",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PhpStorm 2021.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "vue.recent.templates": [
+      "Vue Composition API Component"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\machi\Desktop\MMI\S5\Dev FRONT\VUEJS\TD2\TD2VueJS\src\views" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="" />
+      <created>1695967826786</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695967826786</updated>
+      <workItem from="1695967827777" duration="5881000" />
+      <workItem from="1695974855221" duration="5177000" />
+      <workItem from="1697441361412" duration="689000" />
+      <workItem from="1697443048667" duration="7763000" />
+      <workItem from="1697466516143" duration="2640000" />
+      <workItem from="1697544508958" duration="7641000" />
+      <workItem from="1698386168428" duration="585000" />
+      <workItem from="1700550653992" duration="10483000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: Init vueJS">
+      <option name="closed" value="true" />
+      <created>1695968475950</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695968475950</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: Init vueJS">
+      <option name="closed" value="true" />
+      <created>1695971517339</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695971517339</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: API request to display movies in landing page">
+      <option name="closed" value="true" />
+      <created>1695974526796</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695974526796</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: API request to display movies in landing page">
+      <option name="closed" value="true" />
+      <created>1695974702648</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695974702648</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: Add movie data and routes to have a detail page for each movie.">
+      <option name="closed" value="true" />
+      <created>1695982123644</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695982123644</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: Add movie page and start pagination. CSS changes overall.">
+      <option name="closed" value="true" />
+      <created>1697446656204</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1697446656204</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: Add Next/Previous to paginate Movie">
+      <option name="closed" value="true" />
+      <created>1697451329479</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1697451329479</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: FicheMovie fix">
+      <option name="closed" value="true" />
+      <created>1697452105483</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697452105483</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: Add pages for actors/categories and login page to get JWT token">
+      <option name="closed" value="true" />
+      <created>1697549261937</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697549261937</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat:Add Actors listing">
+      <option name="closed" value="true" />
+      <created>1697613721144</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1697613721144</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat:Add Actors listing">
+      <option name="closed" value="true" />
+      <created>1700551550115</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700551550115</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat:Add token check to routes">
+      <option name="closed" value="true" />
+      <created>1700557875850</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1700557875850</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: Init vueJS" />
+    <MESSAGE value="feat: API request to display movies in landing page" />
+    <MESSAGE value="feat: Add movie data and routes to have a detail page for each movie." />
+    <MESSAGE value="feat: Add movie page and start pagination. CSS changes overall." />
+    <MESSAGE value="feat: Add Next/Previous to paginate Movie" />
+    <MESSAGE value="feat: FicheMovie fix" />
+    <MESSAGE value="feat: Add pages for actors/categories and login page to get JWT token" />
+    <MESSAGE value="feat:Add Actors listing" />
+    <MESSAGE value="feat:Add token check to routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:Add token check to routes" />
+  </component>
+</project>
