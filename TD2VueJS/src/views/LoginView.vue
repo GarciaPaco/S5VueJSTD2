@@ -4,7 +4,7 @@ import {ref} from "vue";
 const email = ref('')
 const password = ref('')
 const login = () => {
-  fetch('http://localhost/my_project_directory/public/api/login_check', {
+  fetch('http://localhost/public/api/login_check', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

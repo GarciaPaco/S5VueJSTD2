@@ -9,7 +9,7 @@ const pagePrevious = ref('')
 
 const token = localStorage.getItem('token')
 onMounted(async () => {
-  fetch('http://localhost/my_project_directory/public/api/categories?page=1', {
+  fetch('http://localhost/public/api/categories?page=1', {
     headers: {
       'Authorization': 'Bearer ' + token
     }

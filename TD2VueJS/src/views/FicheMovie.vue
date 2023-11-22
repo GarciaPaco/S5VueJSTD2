@@ -9,7 +9,7 @@ const movieId = route.params.movieId;
 try {
   const token = localStorage.getItem('token')
   onMounted(async () => {
-    const response = await axios.get('http://localhost/my_project_directory/public/api/movies/' + movieId,
+    const response = await axios.get('http://localhost/public/api/movies/' + movieId,
         {
           headers: {
             'Authorization': 'Bearer ' + token
