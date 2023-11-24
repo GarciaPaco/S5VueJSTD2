@@ -5,6 +5,8 @@
   const pageNext = ref('')
   const pagePrevious = ref('')
   const token = localStorage.getItem('token')
+  const recherche = ref('');
+
 
   onMounted(async () => {
   fetch('http://localhost/public/api/actors?page=1', {
@@ -54,6 +56,26 @@
   console.error('Une erreur s\'est produite lors de la récupération des données.', error);
 }
 }
+
+  async function filter() {
+    try {
+      const response = await fetch(`http://localhost/public/api/actors?page=1&lastName=${recherche.value}`, {
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      });
+      const data = await response.json();
+      if (data.code === 401) {
+        return router.push('/login')
+      } else {
+        actors.value = data['hydra:member'];
+        pageNext.value = data['hydra:view']['hydra:next'];
+        pagePrevious.value = data['hydra:view']['hydra:previous'];
+      }
+    } catch (error) {
+
+    }
+  }
 </script>
 
 <template>
@@ -64,6 +86,11 @@
   <template v-if="pageNext">
     <a class="pagination" @click="nextPage()">Next</a>
   </template>
+  <div class="recherche">
+    <label for="recherche">Rechercher un acteur</label>
+    <input class="search" v-model="recherche" type="text">
+    <button class="recherche" @click="filter">Rechercher</button>
+  </div>
   <div v-if="actors" class="flex">
     <template class="card" v-for="actor in actors">
       <p>Prénom de l'acteur/trice : {{actor.firstName}}</p>

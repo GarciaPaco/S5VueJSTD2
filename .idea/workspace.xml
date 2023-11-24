@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feature: fix pagination to get token in request">
+    <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feature: Search bar for Movie page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/assets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/assets/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/ActorsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/ActorsView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/CategoryView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/CategoryView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/Movie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/Movie.vue" afterDir="false" />
     </list>
@@ -125,7 +125,7 @@
       <workItem from="1698386168428" duration="585000" />
       <workItem from="1700550653992" duration="12433000" />
       <workItem from="1700657260966" duration="295000" />
-      <workItem from="1700665329663" duration="7166000" />
+      <workItem from="1700665329663" duration="9247000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Init vueJS">
       <option name="closed" value="true" />
@@ -239,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700810588344</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="feature: Search bar for Movie page">
+      <option name="closed" value="true" />
+      <created>1700813858944</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1700813858944</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +276,7 @@
     <MESSAGE value="feat:Add token check to routes" />
     <MESSAGE value="feat:check for invalid token and redirection" />
     <MESSAGE value="feature: fix pagination to get token in request" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: fix pagination to get token in request" />
+    <MESSAGE value="feature: Search bar for Movie page" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: Search bar for Movie page" />
   </component>
 </project>

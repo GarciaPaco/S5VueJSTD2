@@ -6,7 +6,6 @@
   const pageNext = ref('')
   const pagePrevious = ref('')
   const token = localStorage.getItem('token')
-  const dataAll = ref();
   const recherche = ref('');
 
 
