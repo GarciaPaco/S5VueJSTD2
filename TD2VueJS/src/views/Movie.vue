@@ -14,7 +14,6 @@
   })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         if (data.code === 401) {
           router.push('/login')
         } else {
@@ -24,9 +23,14 @@
         }
       });
 });
+
   async function nextPage() {
   try {
-  const response = await fetch(`http://localhost${pageNext.value}`);
+  const response = await fetch(`http://localhost${pageNext.value}`, {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
   const data = await response.json();
   movies.value = data['hydra:member'];
   pageNext.value = data['hydra:view']['hydra:next'];
@@ -38,7 +42,11 @@
 
   async function previousPage() {
   try {
-  const response = await fetch(`http://localhost${pagePrevious.value}`);
+  const response = await fetch(`http://localhost${pagePrevious.value}`, {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
   const data = await response.json();
   movies.value = data['hydra:member'];
   pageNext.value = data['hydra:view']['hydra:next'];

@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="feat:check for invalid token and redirection">
+    <list default="true" id="e5d88286-9706-4f91-a5f3-c04bbbd4657f" name="Changes" comment="fix: fix change in symfony routing names">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TD2VueJS/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/components/LandingPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/components/LandingPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/ActorsView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/ActorsView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/CategoryView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/CategoryView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/FicheMovie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/FicheMovie.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/LoginView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/LoginView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TD2VueJS/src/views/Movie.vue" beforeDir="false" afterPath="$PROJECT_DIR$/TD2VueJS/src/views/Movie.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +86,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/gestionDate&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/machi/Desktop/MMI/S5/Dev FRONT/VUEJS/TD2/TD2VueJS/src/views&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -97,6 +94,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\PhpStorm 2021.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -128,6 +126,7 @@
       <workItem from="1698386168428" duration="585000" />
       <workItem from="1700550653992" duration="12433000" />
       <workItem from="1700657260966" duration="295000" />
+      <workItem from="1700665329663" duration="4370000" />
     </task>
     <task id="LOCAL-00001" summary="feat: Init vueJS">
       <option name="closed" value="true" />

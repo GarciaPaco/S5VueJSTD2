@@ -29,7 +29,11 @@ onMounted(async () => {
 
 async function nextPage() {
   try {
-    const response = await fetch(`http://localhost${pageNext.value}`);
+    const response = await fetch(`http://localhost${pageNext.value}`, {
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    })
     const data = await response.json();
     categories.value = data['hydra:member'];
     pageNext.value = data['hydra:view']['hydra:next'];
@@ -41,7 +45,11 @@ async function nextPage() {
 
 async function previousPage() {
   try {
-    const response = await fetch(`http://localhost${pagePrevious.value}`);
+    const response = await fetch(`http://localhost${pagePrevious.value}`, {
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    })
     const data = await response.json();
     categories.value = data['hydra:member'];
     pageNext.value = data['hydra:view']['hydra:next'];

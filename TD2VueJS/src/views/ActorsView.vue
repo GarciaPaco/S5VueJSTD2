@@ -25,7 +25,11 @@
   });
   async function nextPage() {
   try {
-  const response = await fetch(`http://localhost${pageNext.value}`);
+  const response = await fetch(`http://localhost${pageNext.value}`, {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
   const data = await response.json();
   actors.value = data['hydra:member'];
   pageNext.value = data['hydra:view']['hydra:next'];
@@ -37,7 +41,11 @@
 
   async function previousPage() {
   try {
-  const response = await fetch(`http://localhost${pagePrevious.value}`);
+  const response = await fetch(`http://localhost${pagePrevious.value}`, {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
   const data = await response.json();
   actors.value = data['hydra:member'];
   pageNext.value = data['hydra:view']['hydra:next'];
