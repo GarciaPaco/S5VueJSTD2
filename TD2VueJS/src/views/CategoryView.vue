@@ -85,17 +85,7 @@ async function previousPage() {
   padding: 8px 16px;
 }
 
-.search {
-  margin-left: 5px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
 
-.recherche {
-  margin-left: 31px;
-  color: white;
-  font-weight: bold;
-}
 
 .pagination {
   width: 50px;
