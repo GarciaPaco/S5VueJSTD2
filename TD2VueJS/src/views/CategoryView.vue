@@ -5,7 +5,7 @@ import router from "@/router";
 const categories = ref('')
 const pageNext = ref('')
 const pagePrevious = ref('')
-
+const recherche = ref('');
 
 const token = localStorage.getItem('token')
 onMounted(async () => {
@@ -29,7 +29,11 @@ onMounted(async () => {
 
 async function nextPage() {
   try {
-    const response = await fetch(`http://localhost${pageNext.value}`);
+    const response = await fetch(`http://localhost${pageNext.value}`, {
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    })
     const data = await response.json();
     categories.value = data['hydra:member'];
     pageNext.value = data['hydra:view']['hydra:next'];
@@ -41,7 +45,11 @@ async function nextPage() {
 
 async function previousPage() {
   try {
-    const response = await fetch(`http://localhost${pagePrevious.value}`);
+    const response = await fetch(`http://localhost${pagePrevious.value}`, {
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    })
     const data = await response.json();
     categories.value = data['hydra:member'];
     pageNext.value = data['hydra:view']['hydra:next'];
@@ -51,7 +59,25 @@ async function previousPage() {
   }
 }
 
+async function filter() {
+  try {
+    const response = await fetch(`http://localhost/public/api/categories?page=1&name=${recherche.value}`, {
+      headers: {
+        'Authorization': 'Bearer ' + token
+      }
+    });
+    const data = await response.json();
+    if (data.code === 401) {
+      return router.push('/login')
+    } else {
+      categories.value = data['hydra:member'];
+      pageNext.value = data['hydra:view']['hydra:next'];
+      pagePrevious.value = data['hydra:view']['hydra:previous'];
+    }
+  } catch (error) {
 
+  }
+}
 </script>
 <template>
 
@@ -63,6 +89,12 @@ async function previousPage() {
   <template v-if="pageNext">
     <a class="pagination" @click="nextPage()">Next</a>
   </template>
+
+  <div class="recherche">
+    <label for="recherche">Rechercher une catégorie</label>
+    <input class="search" v-model="recherche" type="text">
+    <button class="recherche" @click="filter">Rechercher</button>
+  </div>
   <div v-if="categories" class="flex">
     <template class="card" v-for="category in categories">
       <p>Categorie : {{ category.name }}</p>
@@ -77,17 +109,7 @@ async function previousPage() {
   padding: 8px 16px;
 }
 
-.search {
-  margin-left: 5px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
 
-.recherche {
-  margin-left: 31px;
-  color: white;
-  font-weight: bold;
-}
 
 .pagination {
   width: 50px;

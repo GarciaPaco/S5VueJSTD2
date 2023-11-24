@@ -6,6 +6,10 @@
   const pageNext = ref('')
   const pagePrevious = ref('')
   const token = localStorage.getItem('token')
+  const recherche = ref('');
+
+
+
   onMounted(async () => {
   fetch('http://localhost/public/api/movies?page=1', {
     headers: {
@@ -14,7 +18,6 @@
   })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         if (data.code === 401) {
           router.push('/login')
         } else {
@@ -24,9 +27,14 @@
         }
       });
 });
+
   async function nextPage() {
   try {
-  const response = await fetch(`http://localhost${pageNext.value}`);
+  const response = await fetch(`http://localhost${pageNext.value}`, {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
   const data = await response.json();
   movies.value = data['hydra:member'];
   pageNext.value = data['hydra:view']['hydra:next'];
@@ -38,7 +46,11 @@
 
   async function previousPage() {
   try {
-  const response = await fetch(`http://localhost${pagePrevious.value}`);
+  const response = await fetch(`http://localhost${pagePrevious.value}`, {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
   const data = await response.json();
   movies.value = data['hydra:member'];
   pageNext.value = data['hydra:view']['hydra:next'];
@@ -47,6 +59,26 @@
   console.error('Une erreur s\'est produite lors de la récupération des données.', error);
 }
 }
+
+async function filter() {
+try {
+  const response = await fetch(`http://localhost/public/api/movies?page=1&title=${recherche.value}`, {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  });
+  const data = await response.json();
+  if (data.code === 401) {
+    return router.push('/login')
+  } else {
+    movies.value = data['hydra:member'];
+    pageNext.value = data['hydra:view']['hydra:next'];
+    pagePrevious.value = data['hydra:view']['hydra:previous'];
+  }
+} catch(error) {
+
+}
+    }
 </script>
 
 <template>
@@ -57,6 +89,11 @@
   <template v-if="pageNext">
     <a class="pagination" @click="nextPage()">Next</a>
   </template>
+  <div class="recherche">
+    <label for="recherche">Rechercher film</label>
+    <input class="search" v-model="recherche" type="text">
+    <button class="recherche" @click="filter">Rechercher</button>
+  </div>
   <div v-if="movies" class="flex">
     <template v-for="movie in movies">
       <div class="card">
