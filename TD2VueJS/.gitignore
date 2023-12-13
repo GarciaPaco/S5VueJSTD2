@@ -17,7 +17,7 @@ coverage
 /wra506dTD1
 /cypress/videos/
 /cypress/screenshots/
-.idea
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
