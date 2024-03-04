@@ -9,7 +9,6 @@ defineProps(['movie']);
   <h3>Description : {{ movie.description }}</h3>
   <h3>Date de sortie : {{ movie.releaseDate }}</h3>
   <router-link :to="'/fiche-movie/'+movie.id">Accéder aux détails du film</router-link>
-
   </div>
 </template>
 
