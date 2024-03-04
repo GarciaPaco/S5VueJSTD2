@@ -5,9 +5,12 @@
   const pageNext = ref('')
   const pagePrevious = ref('')
   const token = localStorage.getItem('token')
+  const recherche = ref('');
+  const apiUrl = import.meta.env.VITE_API_URL;
+
 
   onMounted(async () => {
-  fetch('http://localhost/my_project_directory/public/api/actors?page=1', {
+  fetch(apiUrl +'/actors?page=1', {
     headers: {
       'Authorization': 'Bearer ' + token
     }
@@ -25,7 +28,11 @@
   });
   async function nextPage() {
   try {
-  const response = await fetch(`http://localhost${pageNext.value}`);
+  const response = await fetch(`http://localhost${pageNext.value}`, {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
   const data = await response.json();
   actors.value = data['hydra:member'];
   pageNext.value = data['hydra:view']['hydra:next'];
@@ -37,7 +44,11 @@
 
   async function previousPage() {
   try {
-  const response = await fetch(`http://localhost${pagePrevious.value}`);
+  const response = await fetch(`http://localhost${pagePrevious.value}`, {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
   const data = await response.json();
   actors.value = data['hydra:member'];
   pageNext.value = data['hydra:view']['hydra:next'];
@@ -46,6 +57,26 @@
   console.error('Une erreur s\'est produite lors de la récupération des données.', error);
 }
 }
+
+  async function filter() {
+    try {
+      const response = await fetch(apiUrl +`/actors?page=1&lastName=${recherche.value}`, {
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      });
+      const data = await response.json();
+      if (data.code === 401) {
+        return router.push('/login')
+      } else {
+        actors.value = data['hydra:member'];
+        pageNext.value = data['hydra:view']['hydra:next'];
+        pagePrevious.value = data['hydra:view']['hydra:previous'];
+      }
+    } catch (error) {
+
+    }
+  }
 </script>
 
 <template>
@@ -56,10 +87,21 @@
   <template v-if="pageNext">
     <a class="pagination" @click="nextPage()">Next</a>
   </template>
+  <div class="recherche">
+    <label for="recherche">Rechercher un acteur par son nom</label>
+    <input class="search" v-model="recherche" type="text">
+    <button class="recherche" @click="filter">Rechercher</button>
+  </div>
+
   <div v-if="actors" class="flex">
     <template class="card" v-for="actor in actors">
+      <div class="card">
+<!--        <pre>{{actor}}</pre>-->
       <p>Prénom de l'acteur/trice : {{actor.firstName}}</p>
       <p>Nom de l'acteur/trice : {{actor.lastName}}</p><br>
+      <p>Pays d'origine : {{actor.actorOrigine.Origine}}</p>
+      <h3>Filmographie :</h3><p><span v-for="movie in actor.movie"> {{movie.title}} <br></span></p>
+      </div>
     </template>
   </div>
   <div v-else>

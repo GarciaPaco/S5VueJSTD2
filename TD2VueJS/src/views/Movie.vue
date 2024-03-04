@@ -6,15 +6,25 @@
   const pageNext = ref('')
   const pagePrevious = ref('')
   const token = localStorage.getItem('token')
+  const recherche = ref('');
+  const apiUrl = import.meta.env.VITE_API_URL;
+
+  let editedMovieTitle = ref('');
+  let editedDateRelease = ref('');
+  let editedDuration = ref('');
+  let editedDescription = ref('');
+  let editedCategory = ref('');
+  let editedActors = ref([]);
+  let media = ref('');
+
   onMounted(async () => {
-  fetch('http://localhost/my_project_directory/public/api/movies?page=1', {
+  fetch(apiUrl+'/movies?page=1', {
     headers: {
       'Authorization': 'Bearer ' + token
     }
   })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         if (data.code === 401) {
           router.push('/login')
         } else {
@@ -24,9 +34,14 @@
         }
       });
 });
+
   async function nextPage() {
   try {
-  const response = await fetch(`http://localhost${pageNext.value}`);
+  const response = await fetch(`http://localhost${pageNext.value}`, {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
   const data = await response.json();
   movies.value = data['hydra:member'];
   pageNext.value = data['hydra:view']['hydra:next'];
@@ -38,7 +53,11 @@
 
   async function previousPage() {
   try {
-  const response = await fetch(`http://localhost${pagePrevious.value}`);
+  const response = await fetch(`http://localhost${pagePrevious.value}`, {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  })
   const data = await response.json();
   movies.value = data['hydra:member'];
   pageNext.value = data['hydra:view']['hydra:next'];
@@ -47,6 +66,70 @@
   console.error('Une erreur s\'est produite lors de la récupération des données.', error);
 }
 }
+
+async function filter() {
+try {
+  const response = await fetch(apiUrl+`/movies?page=1&title=${recherche.value}`, {
+    headers: {
+      'Authorization': 'Bearer ' + token
+    }
+  });
+  const data = await response.json();
+  if (data.code === 401) {
+    return router.push('/login')
+  } else {
+    movies.value = data['hydra:member'];
+    pageNext.value = data['hydra:view']['hydra:next'];
+    pagePrevious.value = data['hydra:view']['hydra:previous'];
+  }
+} catch(error) {
+
+}
+    }
+
+  function formatDate(dateString) {
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    return new Date(dateString).toLocaleDateString('fr-FR', options);
+  }
+
+  async function createMovie() {
+    try {
+      const token = localStorage.getItem('token')
+      if (!token) {
+        this.$router.push('/login')
+        return;
+      }
+      let newMovie = {
+        title: editedMovieTitle.value,
+        description: editedDescription.value,
+        releaseDate: editedDateRelease.value,
+        duration: parseInt(editedDuration.value),
+        category: editedCategory.value,
+        actor: editedActors.value
+      };
+      const response = await fetch(apiUrl +`/movies`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/merge-patch+json',
+        },
+        body: JSON.stringify(newMovie),
+      });
+
+      if (response.status === 200) {
+        formHide();
+        await refreshMovie(movieId);
+      }
+    } catch (error) {
+      console.error('Une erreur s\'est produite lors de la récupération des données.', error);
+    }
+  }
+
+  async function modalNewMovie() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'block';
+  }
+
 </script>
 
 <template>
@@ -57,15 +140,24 @@
   <template v-if="pageNext">
     <a class="pagination" @click="nextPage()">Next</a>
   </template>
+  <div class="recherche">
+    <label for="recherche">Rechercher film</label>
+    <input class="search" v-model="recherche" type="text">
+    <button class="recherche" @click="filter">Rechercher</button>
+  </div>
+  <div class="recherche">
+    <button class="recherche" @click="modalNewMovie">Ajouter un film</button>
+  </div>
   <div v-if="movies" class="flex">
     <template v-for="movie in movies">
       <div class="card">
         <p>
           {{ movie.title }} <br>
           {{ movie.description }} <br>
-          Durée : {{ movie.duration }} <br>
-          Sortie : {{ movie.releaseDate }} <br>
-          <router-link :to="{name: 'FicheMovie', params : {movieId : movie.id}} ">Accéder aux détails du film</router-link>
+          Durée : {{ movie.duration }} minutes.<br>
+          Sortie : {{ formatDate(movie.releaseDate) }} <br>
+          Catégorie : {{ movie.category.name }} <br>
+          <router-link :to="{name: 'FicheMovie', params : {movieId : movie['@id']}} ">Accéder aux détails du film</router-link>
         </p>
       </div>
     </template>
