@@ -7,11 +7,11 @@
   const pagePrevious = ref('')
   const token = localStorage.getItem('token')
   const recherche = ref('');
-
+  const apiUrl = import.meta.env.VITE_API_URL;
 
 
   onMounted(async () => {
-  fetch('http://localhost/public/api/movies?page=1', {
+  fetch(apiUrl+'/movies?page=1', {
     headers: {
       'Authorization': 'Bearer ' + token
     }
@@ -62,7 +62,7 @@
 
 async function filter() {
 try {
-  const response = await fetch(`http://localhost/public/api/movies?page=1&title=${recherche.value}`, {
+  const response = await fetch(apiUrl+`/movies?page=1&title=${recherche.value}`, {
     headers: {
       'Authorization': 'Bearer ' + token
     }
@@ -79,6 +79,13 @@ try {
 
 }
     }
+
+  function formatDate(dateString) {
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    return new Date(dateString).toLocaleDateString('fr-FR', options);
+  }
+
+
 </script>
 
 <template>
@@ -100,9 +107,10 @@ try {
         <p>
           {{ movie.title }} <br>
           {{ movie.description }} <br>
-          Durée : {{ movie.duration }} <br>
-          Sortie : {{ movie.releaseDate }} <br>
-          <router-link :to="{name: 'FicheMovie', params : {movieId : movie.id}} ">Accéder aux détails du film</router-link>
+          Durée : {{ movie.duration }} minutes.<br>
+          Sortie : {{ formatDate(movie.releaseDate) }} <br>
+          Catégorie : {{ movie.category.name }} <br>
+          <router-link :to="{name: 'FicheMovie', params : {movieId : movie['@id']}} ">Accéder aux détails du film</router-link>
         </p>
       </div>
     </template>

@@ -6,10 +6,11 @@
   const pagePrevious = ref('')
   const token = localStorage.getItem('token')
   const recherche = ref('');
+  const apiUrl = import.meta.env.VITE_API_URL;
 
 
   onMounted(async () => {
-  fetch('http://localhost/public/api/actors?page=1', {
+  fetch(apiUrl +'/actors?page=1', {
     headers: {
       'Authorization': 'Bearer ' + token
     }
@@ -59,7 +60,7 @@
 
   async function filter() {
     try {
-      const response = await fetch(`http://localhost/public/api/actors?page=1&lastName=${recherche.value}`, {
+      const response = await fetch(apiUrl +`/actors?page=1&lastName=${recherche.value}`, {
         headers: {
           'Authorization': 'Bearer ' + token
         }
@@ -87,14 +88,20 @@
     <a class="pagination" @click="nextPage()">Next</a>
   </template>
   <div class="recherche">
-    <label for="recherche">Rechercher un acteur</label>
+    <label for="recherche">Rechercher un acteur par son nom</label>
     <input class="search" v-model="recherche" type="text">
     <button class="recherche" @click="filter">Rechercher</button>
   </div>
+
   <div v-if="actors" class="flex">
     <template class="card" v-for="actor in actors">
+      <div class="card">
+<!--        <pre>{{actor}}</pre>-->
       <p>Prénom de l'acteur/trice : {{actor.firstName}}</p>
       <p>Nom de l'acteur/trice : {{actor.lastName}}</p><br>
+      <p>Pays d'origine : {{actor.actorOrigine.Origine}}</p>
+      <h3>Filmographie :</h3><p><span v-for="movie in actor.movie"> {{movie.title}} <br></span></p>
+      </div>
     </template>
   </div>
   <div v-else>
