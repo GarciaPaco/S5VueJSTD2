@@ -3,8 +3,9 @@ import router from "@/router";
 import {ref} from "vue";
 const email = ref('')
 const password = ref('')
+const apiUrl = import.meta.env.VITE_API_URL;
 const login = () => {
-  fetch('http://localhost/public/api/login_check', {
+  fetch(apiUrl +'/login_check', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

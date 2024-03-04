@@ -6,10 +6,10 @@ const categories = ref('')
 const pageNext = ref('')
 const pagePrevious = ref('')
 const recherche = ref('');
-
+const apiUrl = import.meta.env.VITE_API_URL;
 const token = localStorage.getItem('token')
 onMounted(async () => {
-  fetch('http://localhost/public/api/categories?page=1', {
+  fetch(apiUrl +'/categories?page=1', {
     headers: {
       'Authorization': 'Bearer ' + token
     }
@@ -59,9 +59,13 @@ async function previousPage() {
   }
 }
 
+
+  // 'actor': movieActors.value.map(actor => `/api/actors/${actor}`),
+
+
 async function filter() {
   try {
-    const response = await fetch(`http://localhost/public/api/categories?page=1&name=${recherche.value}`, {
+    const response = await fetch(apiUrl +`/categories?page=1&name=${recherche.value}`, {
       headers: {
         'Authorization': 'Bearer ' + token
       }
@@ -95,9 +99,12 @@ async function filter() {
     <input class="search" v-model="recherche" type="text">
     <button class="recherche" @click="filter">Rechercher</button>
   </div>
+
   <div v-if="categories" class="flex">
     <template class="card" v-for="category in categories">
-      <p>Categorie : {{ category.name }}</p>
+      <div class="card">
+        <p>Categorie : {{ category.name }}</p>
+      </div>
     </template>
   </div>
   <div v-else>
@@ -108,7 +115,6 @@ async function filter() {
 .pagination a {
   padding: 8px 16px;
 }
-
 
 
 .pagination {
