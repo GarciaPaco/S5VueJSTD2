@@ -9,6 +9,13 @@
   const recherche = ref('');
   const apiUrl = import.meta.env.VITE_API_URL;
 
+  let editedMovieTitle = ref('');
+  let editedDateRelease = ref('');
+  let editedDuration = ref('');
+  let editedDescription = ref('');
+  let editedCategory = ref('');
+  let editedActors = ref([]);
+  let media = ref('');
 
   onMounted(async () => {
   fetch(apiUrl+'/movies?page=1', {
@@ -85,6 +92,43 @@ try {
     return new Date(dateString).toLocaleDateString('fr-FR', options);
   }
 
+  async function createMovie() {
+    try {
+      const token = localStorage.getItem('token')
+      if (!token) {
+        this.$router.push('/login')
+        return;
+      }
+      let newMovie = {
+        title: editedMovieTitle.value,
+        description: editedDescription.value,
+        releaseDate: editedDateRelease.value,
+        duration: parseInt(editedDuration.value),
+        category: editedCategory.value,
+        actor: editedActors.value
+      };
+      const response = await fetch(apiUrl +`/movies`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/merge-patch+json',
+        },
+        body: JSON.stringify(newMovie),
+      });
+
+      if (response.status === 200) {
+        formHide();
+        await refreshMovie(movieId);
+      }
+    } catch (error) {
+      console.error('Une erreur s\'est produite lors de la récupération des données.', error);
+    }
+  }
+
+  async function modalNewMovie() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'block';
+  }
 
 </script>
 
@@ -100,6 +144,9 @@ try {
     <label for="recherche">Rechercher film</label>
     <input class="search" v-model="recherche" type="text">
     <button class="recherche" @click="filter">Rechercher</button>
+  </div>
+  <div class="recherche">
+    <button class="recherche" @click="modalNewMovie">Ajouter un film</button>
   </div>
   <div v-if="movies" class="flex">
     <template v-for="movie in movies">

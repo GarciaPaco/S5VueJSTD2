@@ -3,6 +3,7 @@ import {useRoute} from 'vue-router'
 import {onMounted, ref} from 'vue';
 import axios from 'axios';
 import moment from 'moment';
+import { nextTick } from 'vue';
 
 
 const apiUrl = import.meta.env.VITE_API_URL;
@@ -16,7 +17,6 @@ let editedCategory = ref('');
 let editedActors = ref([]);
 let categories = ref('');
 let actors = ref([]);
-let fileInput = ref(null);
 const route = useRoute();
 let movieId = route.params.movieId;
 movieId = movieId.split('/').pop();
@@ -30,6 +30,7 @@ async function checkToken() {
       location.href = '/login'
     }
   } catch (error) {
+    console.log('Error', error)
     console.log('Error', error.response.data.code)
     if (error.response.data.code === 401) {
       location.href = '/login'
@@ -80,7 +81,6 @@ async function getActors() {
   }
 
 async function updateMovie() {
-  let media = await uploadImage()
   try {
     const token = localStorage.getItem('token')
     if (!token) {
@@ -93,11 +93,8 @@ async function updateMovie() {
       releaseDate: editedDateRelease.value,
       duration: parseInt(editedDuration.value),
       category: editedCategory.value,
-      actor: editedActors.value,
+      actor: editedActors.value
     };
-    if (media !== null) {
-      updatedMovie.media = media['@id'];
-    }
     const response = await fetch(apiUrl +`/movies/`+movieId, {
       method: 'PATCH',
       headers: {
@@ -132,6 +129,7 @@ function convertDate(date, format = 'DD/MM/YYYY') {
   return moment(date).format(format);
 }
 function formShow() {
+
   let modal = document.getElementById("formulaire")
   modal.style.display = "block";
   editedMovieTitle.value = data.value.title
@@ -140,46 +138,6 @@ function formShow() {
   editedDescription.value = data.value.description
   editedCategory.value = data.value.category['@id']
   editedActors.value = data.value.actor.map(actor => actor['@id']);
-}
-
-function uploadFile(event) {
-  fileInput.value = event.target.files[0];
-}
-
-async function uploadImage() {
-  try {
-    const token = localStorage.getItem('token')
-    if (!token) {
-      this.$router.push('/login')
-      return;
-    }
-    const file = fileInput.value;
-    const fileType = file.type;
-
-    if (fileType !== 'image/png' && fileType !== 'image/jpeg') {
-      console.error('Invalid file type. Please upload a PNG or JPEG image.');
-      return;
-    }
-  if (!file) {
-    console.error('No file selected.');
-    return;
-  }
-
-    let formData = new FormData();
-    formData.append('file', file);
-    const response = await fetch(apiUrl +`/media_objects`, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      body: formData,
-    });
-
-  return await response.json()
-
-  } catch (error) {
-    console.error('An error occurred while uploading the image.', error);
-  }
 }
 
 function deletMovie() {
@@ -221,6 +179,9 @@ function deletMovie() {
 </script>
 
 <template>
+   <pre>
+          {{actors.value}}
+        </pre>
   <div class="dataMovie" v-if="data">
     <h1>Nom du film : {{ data.title }}</h1>
     <p>Description : {{ data.description }}</p>
@@ -228,9 +189,9 @@ function deletMovie() {
     <p>Catégorie : {{ data.category.name }}</p>
     <p>Acteur(s) : <span v-for="actor in data.actor"><br> {{ actor.firstName }} {{actor.lastName}}</span></p>
     <p>Durée : {{ data.duration }} minutes.</p>
-    <img :src="data.media.contentUrl" alt="Affiche du film" width="200" height="300">
-    <a @click="formShow()"><br>Editer le film<br></a>
+    <a @click="formShow()">Editer le film<br></a>
     <a @click="deletMovie()">Supprimer le film</a>
+
     <div class="form-container" id="formulaire" style="display: none">
       <div class="modal-content">
         <div class="modal-header">
@@ -252,6 +213,7 @@ function deletMovie() {
             <select id="editedCategory" name="category" v-model="editedCategory">
               <option v-for="category in categories" :value="category['@id']">{{ category.name }}</option>
             </select>
+
             <label for="editMovieActors">Acteurs <span class="required">*</span></label>
             <a-select v-model="editedActors" multiple :placeholder="'Sélectionnez les acteurs'">
               <a-option
@@ -261,8 +223,6 @@ function deletMovie() {
                 {{ actor.firstName }} {{ actor.lastName }}
               </a-option>
             </a-select>
-            <label for="poster">Affiche du film</label>
-            <input type="file" id="poster" name="poster" accept="image/*" @change="uploadFile">
             <div class="modal-footer">
             <input type="submit" value="Valider la modification">
             </div>
@@ -282,15 +242,9 @@ function deletMovie() {
 }
 
 .form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 20%;
-  left: 0;
-  width: 100%;
-  height: 60vh;
 }
+
+/* Modal Header */
 .modal-header {
   padding: 2px 16px;
   color: black;
@@ -301,16 +255,19 @@ function deletMovie() {
   margin-left: 30%;
 }
 
+/* Modal Body */
 .modal-body {
   padding: 2px 16px;
   color: black;
 }
 
+/* Modal Footer */
 .modal-footer {
   padding: 2px 16px;
   color: black;
 }
 
+/* Modal Content */
 .modal-content {
   border-radius: 0.75rem;
   position: relative;
@@ -318,10 +275,12 @@ function deletMovie() {
   margin: auto;
   padding: 0;
   width: 550px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   animation-name: animatetop;
   animation-duration: 0.4s
 }
 
+/* Add Animation */
 @-webkit-keyframes animatetop {
   from {
     top: -300px;
@@ -358,27 +317,6 @@ function deletMovie() {
   color: #ff00e9;
   text-decoration: none;
   cursor: pointer;
-}
-
-.modal-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 50vh;
-}
-
-.modal-body form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.modal-body label,
-.modal-body input {
-  width: 100%;
-  margin-bottom: 10px;
 }
 
 </style>

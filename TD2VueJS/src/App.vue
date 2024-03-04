@@ -1,6 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-const token = localStorage.getItem('token')
+
+let token = localStorage.getItem('token');
+let username = localStorage.getItem('username');
 function logout() {
   localStorage.removeItem('token')
   location.reload()
@@ -10,17 +12,19 @@ function logout() {
 <template>
   <header>
     <div class="wrapper">
-         <nav>
+      <nav>
         <RouterLink to="/">Home</RouterLink>
-           <template v-if="token">
-             <RouterLink to="/movie">Movie</RouterLink>
-             <RouterLink to="/actors">Actors</RouterLink>
-             <RouterLink to="/category">Category</RouterLink>
-             <a @click="logout()">Logout</a>
-           </template>
-           <template v-else>
-             <RouterLink to="/login">Login</RouterLink>
-           </template>
+        <template v-if="token">
+          <RouterLink to="/movie">Movie</RouterLink>
+          <RouterLink to="/actors">Actors</RouterLink>
+          <RouterLink to="/category">Category</RouterLink>
+          <a @click="logout()">Logout</a>
+          <span><h3 style="color:red; margin-top:20px">Bienvenue utilisateur {{ username }} ! </h3></span>
+        </template>
+        <template v-else>
+          <RouterLink to="/login">Login</RouterLink>
+        </template>
+
       </nav>
     </div>
   </header>
@@ -34,7 +38,6 @@ nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
 }
 
 nav a.router-link-exact-active {
