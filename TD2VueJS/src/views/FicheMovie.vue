@@ -228,7 +228,9 @@ function deletMovie() {
     <p>Catégorie : {{ data.category.name }}</p>
     <p>Acteur(s) : <span v-for="actor in data.actor"><br> {{ actor.firstName }} {{actor.lastName}}</span></p>
     <p>Durée : {{ data.duration }} minutes.</p>
-    <img :src="data.media.contentUrl" alt="Affiche du film" width="200" height="300">
+    <template v-if="data.media">
+      <img :src="data.media.contentUrl" alt="Affiche du film" width="200" height="300">
+    </template>
     <a @click="formShow()"><br>Editer le film<br></a>
     <a @click="deletMovie()">Supprimer le film</a>
     <div class="form-container" id="formulaire" style="display: none">
