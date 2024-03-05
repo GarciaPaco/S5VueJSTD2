@@ -61,4 +61,6 @@ Utilisateur :
 - [x] Recherche
 - [x] Upload
 - [x] Pagination
-- [x] Modification et suppression des films
+- [x] Création d'un nouveau film avec reload de la page
+- [x] Modification et suppression des films avec refresh de la donnée sans refresh de la page
+- [x] Pop-up confirmation avant suppression de film
