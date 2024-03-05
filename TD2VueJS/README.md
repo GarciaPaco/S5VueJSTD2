@@ -1,29 +1,40 @@
-# TD2VueJS
+# WR505 - Movie API - PACO GARCIA - 2024
 
-This template should help get you started developing with Vue 3 in Vite.
+### Prérequis
 
-## Recommended IDE Setup
+- [Node.js](https://nodejs.org/en/)
+- [Npm](https://www.npmjs.com/get-npm)
+- Projet Backend [WR506](https://github.com/GarciaPaco/SymfonyS5)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### Installation
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+1. Cloner le projet sur votre machine
+2. Installer les dépendances avec :
+    ```bash
+    npm install
+    ```
+3. Créer le fichier .env.local et y renseigner les variables d'environnement nécessaires
+    ```bash
+    cp .env .env.local
+    ```
+4. Renseigner la variable suivante :
+    ```dotenv
+    VITE_SERVER_API_URL #(url de l'api)
+    ```
+5. Lancer le serveur
+- Development
+```bash
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
-
-### Compile and Minify for Production
-
-```sh
+- Production
+```bash
+npm install
 npm run build
+```
+
+L'identifiant pour se connecter a l'application est :
+```
+username : exemple1@gmail.com
+password : test
 ```
