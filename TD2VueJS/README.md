@@ -38,3 +38,15 @@ L'identifiant pour se connecter a l'application est :
 username : exemple1@gmail.com
 password : test
 ```
+
+### Fonctionnalités
+
+- [x] Fixtures
+- [x] Authentification
+- [x] Assert
+- [x] Recherche
+- [x] Upload
+- [x] Pagination
+- [x] Modification et suppression des films
+- [x] Pop-up confirmation avant suppression de film
+- [x] Création d'un nouveau film  
