@@ -1,12 +1,12 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import CardMovies from "@/components/CardMovies.vue";
 
 import router from "@/router";
 let data = ref('');
 let actors = ref('');
 
 const apiUrl = import.meta.env.VITE_API_URL;
+const shortApiUrl = import.meta.env.VITE_API_SHORT_URL;
 
 const token = localStorage.getItem('token');
 if (!token) {
