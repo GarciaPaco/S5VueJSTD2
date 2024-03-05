@@ -20,6 +20,8 @@
 4. Renseigner la variable suivante :
     ```dotenv
     VITE_SERVER_API_URL #(url de l'api)
+    VITE_SERVER_API_URL_SHORT #(url de l'api)
+
     ```
 5. Lancer le serveur
 - Development
