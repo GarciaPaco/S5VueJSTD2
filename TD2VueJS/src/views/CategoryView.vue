@@ -8,6 +8,7 @@ const pagePrevious = ref('')
 const recherche = ref('');
 const apiUrl = import.meta.env.VITE_API_URL;
 const token = localStorage.getItem('token')
+const shortApiUrl = import.meta.env.VITE_API_SHORT_URL;
 onMounted(async () => {
   fetch(apiUrl +'/categories?page=1', {
     headers: {
@@ -29,7 +30,7 @@ onMounted(async () => {
 
 async function nextPage() {
   try {
-    const response = await fetch(`http://localhost${pageNext.value}`, {
+    const response = await fetch(shortApiUrl + pagePrevious.value, {
       headers: {
         'Authorization': 'Bearer ' + token
       }
@@ -45,7 +46,7 @@ async function nextPage() {
 
 async function previousPage() {
   try {
-    const response = await fetch(`http://localhost${pagePrevious.value}`, {
+    const response = await fetch(shortApiUrl + pageNext.value, {
       headers: {
         'Authorization': 'Bearer ' + token
       }

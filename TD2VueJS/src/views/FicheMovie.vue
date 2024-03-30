@@ -6,6 +6,7 @@ import moment from 'moment';
 
 
 const apiUrl = import.meta.env.VITE_API_URL;
+const shortApiUrl = import.meta.env.VITE_API_SHORT_URL;
 
 let data = ref('');
 let editedMovieTitle = ref('');
@@ -228,29 +229,29 @@ function deletMovie() {
     <p>Catégorie : {{ data.category.name }}</p>
     <p>Acteur(s) : <span v-for="actor in data.actor"><br> {{ actor.firstName }} {{actor.lastName}}</span></p>
     <p>Durée : {{ data.duration }} minutes.</p>
+    <pre>{{data}}</pre>
     <template v-if="data.media">
       <img :src="data.media.contentUrl" alt="Affiche du film" width="200" height="300">
     </template>
     <a @click="formShow()"><br>Editer le film<br></a>
     <a @click="deletMovie()">Supprimer le film</a>
-    <div class="form-container" id="formulaire" style="display: none">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span @click="formHide()" class="close">&times;</span>
-          <h2>Titre : {{ data.title }}</h2>
-        </div>
-
-        <div class="modal-body">
-          <form action= "{{apiUrl}}+/movies/{{data.id}}" method="post"  @submit.prevent="updateMovie" >
-            <label for="title">Nouveau titre : </label>
-            <input type="text" id="editedMovieTitle" name="title" v-model="editedMovieTitle">
-            <label for="releaseDate">Nouvelle date de sortie : </label>
-            <input type="date" id="editedDateRelease" name="releaseDate" v-model="editedDateRelease">
-            <label for="duration">Nouvelle durée : </label>
-            <input type="number" id="editedDuration" name="duration" v-model="editedDuration">
-            <label for="description">Nouvelle description : </label>
-            <input type="text" id="editedDescription" name="description" v-model="editedDescription">
-            <label for="category">Changer la catégorie catégorie : </label>
+            <div class="form-container" id="formulaire" style="display: none">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span @click="formHide()" class="close">&times;</span>
+                  <h2>Titre : {{ data.title }}</h2>
+                </div>
+                <div class="modal-body">
+                  <form action= "{{apiUrl}}+/movies/{{data.id}}" method="post"  @submit.prevent="updateMovie" >
+                    <label for="title">Nouveau titre : </label>
+                    <input type="text" id="editedMovieTitle" name="title" v-model="editedMovieTitle">
+                    <label for="releaseDate">Nouvelle date de sortie : </label>
+                    <input type="date" id="editedDateRelease" name="releaseDate" v-model="editedDateRelease">
+                    <label for="duration">Nouvelle durée : </label>
+                    <input type="number" id="editedDuration" name="duration" v-model="editedDuration">
+                    <label for="description">Nouvelle description : </label>
+                    <input type="text" id="editedDescription" name="description" v-model="editedDescription">
+            <label for="category">Changer la catégorie : </label>
             <select id="editedCategory" name="category" v-model="editedCategory">
               <option v-for="category in categories" :value="category['@id']">{{ category.name }}</option>
             </select>
@@ -274,7 +275,7 @@ function deletMovie() {
     </div>
   </div>
   <div v-else>
-    <h1>Loading...</h1>
+    <h1>Chargement des données</h1>
   </div>
 </template>
 
