@@ -121,7 +121,7 @@
 
 .recherche {
   margin-left:31px;
-  color: white;
+
   font-weight: bold;
 }
 
@@ -153,5 +153,7 @@ a:hover {
 .card {
   margin-top: 15px;
 }
+
+
 
 </style>

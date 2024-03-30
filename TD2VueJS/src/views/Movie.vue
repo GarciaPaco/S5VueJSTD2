@@ -346,7 +346,7 @@ try {
 
 .recherche {
   margin-left:31px;
-  color: white;
+
   font-weight: bold;
 }
 

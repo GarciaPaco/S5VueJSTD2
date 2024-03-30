@@ -75,7 +75,7 @@ a:hover {
 }
 
 .card {
-  color: white;
+
   margin-bottom : 30px;
   margin-left : 30px;
   margin-right : 30px;
