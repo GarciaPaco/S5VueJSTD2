@@ -42,13 +42,14 @@ const login = () => {
   <h1>Connexion</h1>
   <div>
     <div>
-      <label for="email">Email</label>
+      <label for="email">Email : </label>
       <input type="email" id="email" v-model="email" class="border-b">
     </div>
     <div>
-      <label for="password">Mot de passe</label>
+      <label for="password">Mot de passe : </label>
       <input type="password" id="password" v-model="password" class="border-b">
     </div>
+    <br>
     <button @click="login">Connexion</button>
   </div>
 </template>

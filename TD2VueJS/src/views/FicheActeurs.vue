@@ -179,9 +179,6 @@ function deletMovie() {
 </script>
 
 <template>
-   <pre>
-          {{actors.value}}
-        </pre>
   <div class="dataMovie" v-if="data">
     <h1>Nom du film : {{ data.title }}</h1>
     <p>Description : {{ data.description }}</p>
