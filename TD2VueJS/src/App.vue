@@ -5,7 +5,7 @@ let token = localStorage.getItem('token');
 let username = localStorage.getItem('username');
 function logout() {
   localStorage.removeItem('token')
-  location.reload()
+  location.href = '/'
 }
 </script>
 

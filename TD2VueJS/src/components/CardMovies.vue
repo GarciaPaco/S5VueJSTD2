@@ -18,7 +18,7 @@ defineProps(['movie']);
   margin-bottom : 30px;
   margin-left : 30px;
   margin-right : 30px;
-  border: 1px solid #2c3e50;
+  border: 1px solid white;
   border-radius: 5px;
   padding: 10px;
 }

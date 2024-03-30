@@ -97,9 +97,8 @@
   <div v-if="actors" class="flex">
     <template class="card" v-for="actor in actors">
       <div class="card">
-<!--        <pre>{{actor}}</pre>-->
       <p>Prénom de l'acteur/trice : {{actor.firstName}}</p>
-      <p>Nom de l'acteur/trice : {{actor.lastName}}</p><br>
+      <p>Nom de l'acteur/trice : {{actor.lastName}}</p>
       <p>Pays d'origine : {{actor.actorOrigine.Origine}}</p>
       <h3>Filmographie :</h3><p><span v-for="movie in actor.movie"> {{movie.title}} <br></span></p>
       </div>
